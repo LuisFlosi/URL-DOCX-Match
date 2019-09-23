@@ -18,11 +18,8 @@ print('Welcome to resume match!')
 print('We currently only accept .docx resumes')
 
 # Insert URL and resume fodler's path
-#url_input = input('Enter job URL:')
-#folder_path = input("Enter resume folder's path:")
-
-url_input = 'https://boards.greenhouse.io/sonyinteractiveentertainmentplaystation/jobs/1834785'
-folder_path = 'C:/Users/luiseduardo/Documents/Resume Curriculo/Resume English/Tech'
+url_input = input('Enter job URL:')
+folder_path = input("Enter resume folder's path:")
 
 # Prepare path to include all .docx in folder
 files_path = folder_path + '/*.docx'
@@ -125,8 +122,11 @@ def dataFrameDic(dic):
 cleanDOCX(folder_path)
 cleanURL(url_input)
 df = dataFrameDic(files)
-df.to_csv(r'answer.csv')
-
+try:
+    df.to_csv(r'answer.csv')
+    print("Successfully created csv fille")
+except:
+    print("Error writing file")
 
 
 
