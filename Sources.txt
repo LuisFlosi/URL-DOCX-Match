@@ -1,0 +1,13 @@
+https://www.programiz.com/python-programming/methods/built-in/input
+https://stackoverflow.com/questions/47922302/reading-multiple-docx-files-in-python-in-one-variable
+https://stackoverflow.com/questions/55718448/how-do-i-get-docx2txt-to-process-all-docx-files-in-directory
+https://stackoverflow.com/questions/19720311/how-to-split-a-text-file-to-its-words-in-python
+https://stackoverflow.com/questions/7253803/how-to-get-everything-after-last-slash-in-a-url
+https://www.geeksforgeeks.org/python-program-crawl-web-page-get-frequent-words/
+https://stackoverflow.com/questions/13323851/python-3-counting-matches-in-two-lists-including-duplicates
+https://thispointer.com/python-pandas-how-to-convert-lists-to-a-dataframe/
+https://stackoverflow.com/questions/4998629/split-string-with-multiple-delimiters-in-python
+https://www.guru99.com/python-regular-expressions-complete-tutorial.html#3
+https://stackoverflow.com/questions/29771168/how-to-remove-words-from-a-list-in-python
+https://stackoverflow.com/questions/2136267/beautiful-soup-and-extracting-a-div-and-its-contents-by-id
+https://cmdlinetips.com/2018/02/how-to-sort-pandas-dataframe-by-columns-and-row/
