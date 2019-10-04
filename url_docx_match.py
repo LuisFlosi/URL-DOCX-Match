@@ -17,18 +17,24 @@ import re
 print('Welcome to resume match!')
 print('We currently only accept .docx resumes')
 
-# Insert URL and resume fodler's path
+# Insert URL and docx fodler's path
 url_input = input('Enter job URL:')
 folder_path = input("Enter resume folder's path:")
 
 # Prepare path to include all .docx in folder
 files_path = folder_path + '/*.docx'
 
+# Include symbols and common words to be removed
 symbols = "!@#$%^&*()_-+={[}]|\;:'<>?/., "
-common_words = ['also', 'have', 'other', 'such', 'all', 'using', 'will', 'from', 'or','is','a','the','for', 'an', 'as', 'of', 'to', 'at', 'with', 'in', 'on', 'that', 'and', 'into', 'by', 'us', 'we', 'you', 'you', 'are', "isn't", ]
+common_words = ['also', 'have', 'other', 'such', 'all', 'using', 'will', 'from',
+                'or','is','a','the','for', 'an', 'as', 'of', 'to', 'at', 'with',
+                'in', 'on', 'that', 'and', 'into', 'by', 'us', 'we', 'you', 'you',
+                'are', "isn't", ]
+
+# Set delimiters to be used for separation (in regex)
 delimiters_re = '; |, |\*|\n|\\t|\b|\| |\s|/|-'
     
-# Function to clean file
+# Function to split words into a list
 def splitContent(content):
     words = content.lower()
     # Split content
@@ -38,6 +44,7 @@ def splitContent(content):
     words = list(filter(None, new_words))
     return(words)
 
+# Function to remove common english words and symbols
 def cleanWordList(wordlist): 
     clean_list =[] 
     for word in wordlist:
@@ -51,7 +58,7 @@ def cleanWordList(wordlist):
 # Initiate dictionary to store files
 files = {}
 
-# Load all .docx into dictionary
+# Load all .docx into dictionary, split and clean
 def cleanDOCX(path):
     path = path + '\\*.docx'
     path = path.replace('\\', '/')
@@ -66,6 +73,8 @@ def cleanDOCX(path):
         # Add name and content to dictionary
         files[file_name] = clean_file
 
+
+# Scrape URL, split words into a list and clean them
 def cleanURL(url): 
     # empty list to store the contents of  
     # the website fetched from our web-crawler 
@@ -88,6 +97,8 @@ def cleanURL(url):
     url_wordlist = cleanWordList(url_wordlist)
     files[url] =  url_wordlist
 
+
+# Organize words from documents into a data frame to include count of words
 def dataFrameDic(dic):
     word_count_list = {}
     names = []
