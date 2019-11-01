@@ -7,14 +7,18 @@ Matches URL and DOCX main words, showing word count per docx document against th
 The following functions have been defined:
 
 splitContent(content) -> returns a list of words in lower case
+
 cleanWordList(wordlist) -> removes unnecessary symbols and common english words from the word list
+
 cleanDOCX(path) -> loads, splits and cleans words from all docs in the provided path
+
 cleanURL(url) -> scrapes URL for important words and adds them to a list, then cleans the list
+
 dataFrameDic(dic) -> creates a dataframe including every unique word from all documents and URL and a count of each word for each document/URL
 
 ###############################################
 
-This has only been tested with a limited number of websites, and certain modifications may be necessary in order to scrape other sites.
+Warning: This has only been tested with a limited number of websites, and certain modifications may be necessary in order to scrape other sites.
 
 ###############################################
 
